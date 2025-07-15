@@ -3,168 +3,116 @@
 import { motion } from 'motion/react'
 import { Button } from '@/components/ui/button'
 import { siteContent } from '@/lib/content'
-import Image from 'next/image'
-import { useInView } from 'motion/react'
-import { useRef } from 'react'
 
 export function AboutSection() {
   const { about } = siteContent
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section
-      id="about-us"
-      ref={ref}
-      className="relative overflow-hidden bg-gradient-to-br from-[#30A832] to-[#29C415] py-20 text-white"
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center justify-between gap-12 lg:flex-row">
+    <section className="bg-[#30A832] py-20">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col items-center justify-between gap-12 lg:flex-row lg:gap-16">
           {/* Left content */}
           <motion.div
-            className="flex-1"
+            className="max-w-lg flex-1 text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
             <motion.h2
-              className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl"
+              className="mb-6 text-4xl font-bold text-white md:text-5xl"
               initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              {about.title}
+              Welcome to LASU TECH X 4.0
             </motion.h2>
 
             <motion.p
-              className="mb-6 text-lg text-green-50 md:text-xl"
+              className="mb-8 text-lg leading-relaxed text-white/90"
               initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              {about.subtitle}
+              LASU TECH X is a premier technology conference designed to bring together top-tier talent in technology,
+              innovation, and entrepreneurship. Join us for an immersive experience featuring industry experts,
+              cutting-edge presentations, networking opportunities, and hands-on workshops.
             </motion.p>
 
-            <motion.p
-              className="mb-12 max-w-2xl text-base text-green-100 md:text-lg"
+            {/* Stats */}
+            <motion.div
+              className="mb-8 flex flex-col gap-6 sm:flex-row sm:gap-12"
               initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              {about.description}
-            </motion.p>
-
-            {/* Stats Grid */}
-            <motion.div
-              className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-3"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              {about.stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center lg:text-left"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.8 + index * 0.2,
-                    type: 'spring',
-                    stiffness: 100,
-                  }}
-                >
-                  <motion.div
-                    className="mb-2 text-5xl font-bold md:text-6xl"
-                    initial={{ scale: 0 }}
-                    animate={isInView ? { scale: 1 } : { scale: 0 }}
-                    transition={{
-                      duration: 0.8,
-                      delay: 1 + index * 0.2,
-                      type: 'spring',
-                      stiffness: 200,
-                    }}
-                  >
-                    {stat.number}
-                  </motion.div>
-                  <div className="mb-1 text-xl font-semibold">{stat.label}</div>
-                  <div className="text-sm text-green-100">{stat.description}</div>
-                </motion.div>
-              ))}
+              <div className="text-center lg:text-left">
+                <div className="text-4xl font-bold text-white">200+</div>
+                <div className="text-sm text-white/80">Expected Attendees</div>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="text-4xl font-bold text-white">20+</div>
+                <div className="text-sm text-white/80">Expert Speakers</div>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="text-4xl font-bold text-white">10</div>
+                <div className="text-sm text-white/80">Workshops</div>
+              </div>
             </motion.div>
 
             <motion.div
+              className="flex flex-col gap-4 sm:flex-row"
               initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.8 }}
             >
               <Button
                 size="lg"
-                className="transform rounded-full bg-white px-8 py-4 text-lg font-semibold text-green-600 transition-all duration-300 hover:scale-105 hover:bg-green-50 hover:shadow-lg"
+                className="rounded-full bg-white px-8 py-3 font-medium text-[#30A832] transition-all duration-300 hover:bg-gray-100"
               >
-                Join Us Today
+                Register
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="rounded-full border-2 border-white px-8 py-3 font-medium text-white transition-all duration-300 hover:bg-white/10"
+              >
+                Join Us Today →
               </Button>
             </motion.div>
           </motion.div>
 
-          {/* Right content - Image */}
+          {/* Right content - Image placeholder */}
           <motion.div
-            className="max-w-lg flex-1"
+            className="max-w-md flex-1"
             initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <motion.div
-              className="relative overflow-hidden rounded-2xl shadow-2xl"
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Image src={about.image} alt="Innovation Hub" width={500} height={400} className="h-auto w-full" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent"></div>
-            </motion.div>
+            <div className="flex aspect-square items-center justify-center rounded-lg bg-white/20 backdrop-blur-sm">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" className="text-white/60">
+                <path
+                  d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+                <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" strokeWidth="2" />
+                <path
+                  d="M21 15L16 10L5 21"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
           </motion.div>
         </div>
-      </div>
-
-      {/* Animated background patterns */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-10 right-10 h-32 w-32 rounded-full border-2 border-white/20"
-          animate={{
-            rotate: [0, 360],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 left-10 h-24 w-24 rounded-full border-2 border-white/20"
-          animate={{
-            rotate: [0, -360],
-            y: [0, -20, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/4 h-4 w-4 rounded-full bg-white/30"
-          animate={{
-            y: [0, -30, 0],
-            x: [0, 20, 0],
-            opacity: [0.3, 0.7, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
       </div>
     </section>
   )

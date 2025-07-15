@@ -9,141 +9,86 @@ export function HeroSection() {
   const { hero } = siteContent
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-[#E0F0DF] to-[#D0E8CF] py-20">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center justify-between gap-12 lg:flex-row">
+    <section className="relative min-h-screen bg-[#E0F0DF] py-20">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col items-center justify-between gap-12 lg:flex-row lg:gap-16">
           {/* Left content */}
           <motion.div
-            className="flex-1 text-center lg:text-left"
+            className="max-w-lg flex-1 text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <motion.h1
-              className="mb-6 text-4xl leading-tight font-bold text-gray-900 md:text-6xl lg:text-7xl"
+              className="mb-6 text-5xl leading-tight font-bold text-gray-900 md:text-6xl lg:text-7xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              {hero.title}
+              Welcome to
+              <br />
+              LASU TECH X<br />
+              4.0!
             </motion.h1>
 
             <motion.p
-              className="mx-auto mb-8 max-w-2xl text-lg text-gray-700 md:text-xl lg:mx-0"
+              className="mb-8 max-w-md text-lg text-gray-700 lg:max-w-none"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              {hero.subtitle}
+              Join us for an extraordinary day of technology and innovation. Experience the future at LASU TECH X 4.0,
+              where ideas come to life.
             </motion.p>
 
             <motion.div
-              className="mb-12 flex flex-col justify-center gap-4 sm:flex-row lg:justify-start"
+              className="flex flex-col gap-4 sm:flex-row lg:justify-start"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <Button
                 size="lg"
-                className="transform rounded-full bg-[linear-gradient(136deg,#30A832_-5.19%,#29C415_102.75%)] px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[linear-gradient(136deg,#278A29_-5.19%,#22B012_102.75%)] hover:shadow-lg"
+                className="rounded-full bg-[#30A832] px-8 py-3 font-medium text-white transition-all duration-300 hover:bg-[#278A29] hover:shadow-lg"
               >
-                {hero.cta.primary}
+                Register
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="rounded-full border-2 border-green-600 px-8 py-4 text-lg font-semibold text-green-600 transition-all duration-300 hover:bg-green-50"
+                className="rounded-full border-2 border-gray-800 px-8 py-3 font-medium text-gray-800 transition-all duration-300 hover:bg-gray-50"
               >
-                {hero.cta.secondary}
+                Learn More
               </Button>
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div
-              className="flex flex-col justify-center gap-8 sm:flex-row lg:justify-start"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <div className="text-center lg:text-left">
-                <div className="text-3xl font-bold text-green-600 md:text-4xl">{hero.stats.attendees}</div>
-                <div className="text-gray-600">Expected Attendees</div>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="text-3xl font-bold text-green-600 md:text-4xl">{hero.stats.speakers}</div>
-                <div className="text-gray-600">Expert Speakers</div>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="text-3xl font-bold text-green-600 md:text-4xl">{hero.stats.workshops}</div>
-                <div className="text-gray-600">Interactive Workshops</div>
-              </div>
             </motion.div>
           </motion.div>
 
-          {/* Right content - Image */}
+          {/* Right content - Large placeholder image */}
           <motion.div
-            className="max-w-lg flex-1"
+            className="max-w-2xl flex-1"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <motion.div
-              className="relative overflow-hidden rounded-2xl shadow-2xl"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Image
-                src={hero.image}
-                alt="LASU TECH X 4.0"
-                width={600}
-                height={400}
-                className="h-auto w-full"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-green-600/20 to-transparent"></div>
-            </motion.div>
+            <div className="flex aspect-[4/3] items-center justify-center rounded-lg bg-gray-300">
+              <svg width="120" height="120" viewBox="0 0 24 24" fill="none" className="text-gray-500">
+                <path
+                  d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+                <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" strokeWidth="2" />
+                <path
+                  d="M21 15L16 10L5 21"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
           </motion.div>
         </div>
-      </div>
-
-      {/* Animated background elements */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-20 left-10 h-20 w-20 rounded-full bg-green-400/20"
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-        <motion.div
-          className="absolute top-40 right-20 h-16 w-16 rounded-full bg-blue-400/20"
-          animate={{
-            y: [0, 20, 0],
-            rotate: [0, -180, -360],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 left-20 h-12 w-12 rounded-full bg-yellow-400/20"
-          animate={{
-            y: [0, -15, 0],
-            x: [0, 15, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
       </div>
     </section>
   )
