@@ -11,13 +11,19 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'dummyimage.com',
+        hostname: 'fakeimg.pl',
         port: '',
         pathname: '/**',
       },
       {
         protocol: 'https',
         hostname: 'picsum.photos',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'dummyimage.com',
         port: '',
         pathname: '/**',
       },

@@ -65,7 +65,7 @@ export const siteContent = {
         id: 1,
         name: 'Mr. John Anderson',
         title: 'CTO, TechCorp',
-        image: 'https://dummyimage.com/300x300/4f46e5/ffffff&text=JA',
+        image: 'https://picsum.photos/300/300?random=20',
         bio: 'Leading expert in AI and machine learning with 15+ years of experience in tech innovation.',
         social: {
           twitter: '#',
@@ -77,7 +77,7 @@ export const siteContent = {
         id: 2,
         name: 'Ms. Sarah Johnson',
         title: 'VP Engineering, StartupXYZ',
-        image: 'https://dummyimage.com/300x300/f59e0b/ffffff&text=SJ',
+        image: 'https://picsum.photos/300/300?random=21',
         bio: 'Passionate about building scalable systems and leading high-performing engineering teams.',
         social: {
           twitter: '#',
@@ -89,7 +89,7 @@ export const siteContent = {
         id: 3,
         name: 'Prof. Mark Williams',
         title: 'Computer Science, MIT',
-        image: 'https://dummyimage.com/300x300/ef4444/ffffff&text=MW',
+        image: 'https://picsum.photos/300/300?random=22',
         bio: 'Renowned academic researcher specializing in quantum computing and cybersecurity.',
         social: {
           twitter: '#',
@@ -101,7 +101,7 @@ export const siteContent = {
         id: 4,
         name: 'Dr. Lisa Chen',
         title: 'Founder, AI Solutions Inc',
-        image: 'https://dummyimage.com/300x300/8b5cf6/ffffff&text=LC',
+        image: 'https://picsum.photos/300/300?random=23',
         bio: 'Pioneer in artificial intelligence applications for healthcare and biotechnology.',
         social: {
           twitter: '#',
@@ -209,12 +209,12 @@ export const siteContent = {
         sponsors: [
           {
             name: 'TechCorp Global',
-            logo: 'https://dummyimage.com/200x100/4f46e5/ffffff&text=TechCorp',
+            logo: 'https://dummyimage.com/200x100/4f46e5/ffffff&text=TechCorp+Global',
             website: '#',
           },
           {
             name: 'Innovation Labs',
-            logo: 'https://dummyimage.com/200x100/f59e0b/ffffff&text=InnoLabs',
+            logo: 'https://dummyimage.com/200x100/f59e0b/ffffff&text=Innovation+Labs',
             website: '#',
           },
         ],
@@ -249,7 +249,7 @@ export const siteContent = {
           },
           {
             name: 'DevTools Inc',
-            logo: 'https://dummyimage.com/120x60/3b82f6/ffffff&text=DevTools',
+            logo: 'https://dummyimage.com/120x60/3b82f6/ffffff&text=DevTools+Inc',
             website: '#',
           },
         ],
