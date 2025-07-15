@@ -2,6 +2,7 @@
 
 import { Logo } from '@/components/custom/logo'
 import { Button } from '@/components/ui/button'
+import { StructuredData } from '@/components/seo/structured-data'
 import { siteContent } from '@/lib/content'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'motion/react'
@@ -29,6 +30,7 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
 
   return (
     <div className="min-h-screen bg-[#E0F0DF]">
+      <StructuredData />
       <motion.header
         className="fixed top-0 right-0 left-0 z-50 border-b border-gray-100/50 bg-white/95 backdrop-blur-md"
         initial={{ y: -100, opacity: 0 }}
