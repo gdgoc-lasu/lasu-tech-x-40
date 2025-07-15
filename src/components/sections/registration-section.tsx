@@ -1,9 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Button } from '@/components/ui/button'
 import { siteContent } from '@/lib/content'
-import { useInView } from 'framer-motion'
+import { useInView } from 'motion/react'
 import { useRef } from 'react'
 import { Check, Users, Award, Coffee, Gift, Calendar, Star } from 'lucide-react'
 
