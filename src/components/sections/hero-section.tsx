@@ -79,24 +79,8 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <div className="flex aspect-[16/9] min-h-[300px] w-full items-center justify-center rounded-2xl bg-gray-300 lg:min-h-[400px]">
-              <div className="rounded-xl bg-gray-400 p-8 shadow-inner">
-                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" className="text-gray-500">
-                  <path
-                    d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                  <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" strokeWidth="2" />
-                  <path
-                    d="M21 15L16 10L5 21"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+            <div className="aspect-[16/9] min-h-[300px] w-full overflow-hidden rounded-2xl lg:min-h-[400px]">
+              <img src={hero.image} alt="LASU TECH X 4.0 Hero Image" className="h-full w-full object-cover" />
             </div>
           </motion.div>
         </div>
