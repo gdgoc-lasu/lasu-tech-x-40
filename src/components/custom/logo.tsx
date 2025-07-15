@@ -14,8 +14,8 @@ export function Logo({ className, containerClassName, variant = 'light' }: LogoP
     <Link href="/" aria-label="ACME" className={cn('inline-block', containerClassName)}>
       <Image
         src="/images/logo.png"
-        width={104}
-        height={57}
+        width={128}
+        height={46}
         alt="ACME logo"
         className={cn(variant === 'light' ? 'invert' : '', className)}
       />
