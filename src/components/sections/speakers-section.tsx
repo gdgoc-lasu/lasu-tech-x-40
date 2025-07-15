@@ -118,7 +118,7 @@ export function SpeakersSection() {
   }
 
   return (
-    <section className="bg-[#E0F0DF] py-20">
+    <section className="overflow-hidden bg-[#E0F0DF] py-20">
       <div className="container mx-auto px-6">
         {/* Header with Navigation Controls */}
         <motion.div
