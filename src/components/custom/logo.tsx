@@ -11,13 +11,14 @@ interface LogoProps {
 
 export function Logo({ className, containerClassName, variant = 'light' }: LogoProps) {
   return (
-    <Link href="/" aria-label="ACME" className={cn('inline-block', containerClassName)}>
+    <Link href="/" aria-label="LASU TECH X" className={cn('inline-block', containerClassName)}>
       <Image
         src="/images/logo.png"
         width={128}
         height={46}
-        alt="ACME logo"
-        className={cn(variant === 'light' ? 'invert' : '', className)}
+        alt="LASU TECH X logo"
+        className={cn('transition-all duration-200', variant === 'light' ? 'invert' : '', className)}
+        priority
       />
     </Link>
   )
