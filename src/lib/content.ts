@@ -63,10 +63,10 @@ export const siteContent = {
     list: [
       {
         id: 1,
-        name: 'Mr. John Anderson',
-        title: 'CTO, TechCorp',
-        image: 'https://picsum.photos/300/300?random=20',
-        bio: 'Leading expert in AI and machine learning with 15+ years of experience in tech innovation.',
+        name: 'Daniel Adeboye',
+        title: 'Developer Marketer at Northflank',
+        image: '/images/Daniel Adeboye.jpg',
+        bio: "Daniel Adeboye is a Software Engineer, Developer Relations Engineer, and Developer Marketer with over four years of experience helping developers and engineering teams build better software. He has built and contributed to products used by tens of thousands of developers worldwide. Daniel previously built Gitsecure, an AI-powered security platform that detects, prioritizes, and fixes code and cloud vulnerabilities in real-time, and Wasps.dev, an AI code review tool integrated into developers' IDEs to improve code quality. He currently works at Northflank as a Developer Marketer.",
         social: {
           twitter: '#',
           linkedin: '#',
@@ -75,10 +75,10 @@ export const siteContent = {
       },
       {
         id: 2,
-        name: 'Ms. Sarah Johnson',
-        title: 'VP Engineering, StartupXYZ',
-        image: 'https://picsum.photos/300/300?random=21',
-        bio: 'Passionate about building scalable systems and leading high-performing engineering teams.',
+        name: 'Xrole Diamond',
+        title: 'Senior Software Engineer at Gigbanc',
+        image: '/images/Xrole Diamond.png',
+        bio: 'Xrole Diamond is a seasoned Senior Mobile Engineer with a track record of building and scaling high-impact mobile applications. He has contributed to several top tech companies, including Andela, Kippa, and Ejara, where he led the development of different products. Currently at Gigbanc, he builds robust financial apps using Flutter. Beyond his technical work, Xrole leads the Core Team at ProCircle, a growing tech community, and is overseeing the development of an AI-powered accountability platform. He is passionate about technology, innovation, and empowering others through community and mentorship.',
         social: {
           twitter: '#',
           linkedin: '#',
@@ -87,10 +87,10 @@ export const siteContent = {
       },
       {
         id: 3,
-        name: 'Prof. Mark Williams',
-        title: 'Computer Science, MIT',
-        image: 'https://picsum.photos/300/300?random=22',
-        bio: 'Renowned academic researcher specializing in quantum computing and cybersecurity.',
+        name: 'Adora Nwodo',
+        title: 'Founder & Executive Director of NexaScale',
+        image: '/images/Adora Nwodo.jpg',
+        bio: "Adora Nwodo is a multi-award-winning Software Engineering Manager focused on building scalable developer platforms and intelligent cloud systems. She currently leads distributed engineering teams across the US and UK within a leading US tech organization. With a strong foundation from her early days at Microsoft, where she contributed to developing Microsoft Mesh, Adora has forged an impressive career marked by technological excellence and visionary leadership. As the author of five tech books and a global speaker with over 200 talks worldwide, she has become a recognized thought leader in the industry. She's also a social entrepreneur and the Founder of NexaScale, an organization connecting people to simulated work experience opportunities. Beyond all this, Adora is a lover for education, she's a Stanford GSB LEAD alumnus and a current student researcher for AI at Georgia Tech. Adora continues to push the boundaries of technology, shaping the future of intelligent systems and platform engineering. She is currently a Microsoft MVP and a mentor for Computer Science students at the University of Bristol. She was recently featured on the Global 40 under 40 list and she has been featured on major media platforms like Yahoo Finance, Business Insider, Guardian news and more.",
         social: {
           twitter: '#',
           linkedin: '#',
@@ -99,10 +99,11 @@ export const siteContent = {
       },
       {
         id: 4,
-        name: 'Dr. Lisa Chen',
-        title: 'Founder, AI Solutions Inc',
-        image: 'https://picsum.photos/300/300?random=23',
-        bio: 'Pioneer in artificial intelligence applications for healthcare and biotechnology.',
+        name: 'Olayinka Atobiloye',
+        title: 'Software Engineer, GDGoC Lead, Unilag',
+        image: '/images/Olayinka Atobiloye.jpg',
+        bio: "Olayinka Atobiloye is a passionate software engineer and mentor dedicated to innovation, leadership, and empowering others in technology. She is a first-class honors student in Computer Engineering at the University of Lagos. Her academic achievements reflect a deep commitment to excellence and continuous learning. Olayinka has gained valuable experience through internships at world-renowned companies, including Palantir Technologies, Bloomberg, and Goldman Sachs. During these roles, she contributed to impactful projects—from developing AI-powered tools that enhance decision-making to automating systems for efficiency and building scalable data solutions to solve complex problems. Beyond her technical accomplishments, Olayinka is deeply committed to mentorship and community leadership. As Chair of Women in Engineering at IEEE UNILAG, she has organized programs that support and inspire the next generation of female engineers. She also serves as a GitHub Campus Expert, helping students develop technical skills and contribute to open-source communities. Olayinka's dedication to combining technical expertise with community empowerment makes her a trailblazer in tech—driving innovation, inclusion, and meaningful impact. In her free time, she enjoys binging sitcoms, reading novels, vibing to RnB music, trying out new food spots, learning quirky but fascinating concepts, and traveling to explore new cultures and perspectives. Beyond her technical accomplishments, Olayinka is deeply committed to mentorship and community leadership. As Chair of Women in Engineering at IEEE UNILAG, she has organized programs that support and inspire the next generation of female engineers. She also serves as a GitHub Campus Expert, helping students develop technical skills and contribute to open-source communities.Olayinka’s dedication to combining technical expertise with community empowerment makes her a trailblazer in tech—driving innovation, inclusion, and meaningful impact.In her free time, she enjoys binging sitcoms, reading novels, vibing to RnB music, trying out new food spots, learning quirky but fascinating concepts, and traveling to explore new cultures and perspectives.",
+
         social: {
           twitter: '#',
           linkedin: '#',

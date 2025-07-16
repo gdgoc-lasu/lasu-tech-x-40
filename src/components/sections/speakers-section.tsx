@@ -13,10 +13,10 @@ export function SpeakersSection() {
     ...speakers.list,
     // Add more speakers for better pagination demonstration
     {
-      name: 'Dr. Alice Chen',
-      title: 'AI Research Director',
-      bio: 'Pioneer in machine learning and neural networks, leading breakthrough research in AI applications.',
-      image: 'https://picsum.photos/200/200?random=5',
+      name: 'Dr. Abiodun Fatai-Abatan (Associate Professor)',
+      title: 'Dean of students Affairs ',
+      bio: 'Dr Abiodun Fatai-Abatan is an Associate Professor of Political Science. He is the current Dean of Students Affairs and an Assistant Director Grants and Endownments, Lagos State University Directorate of Advancement. LASU. He hold his PhD from the University of KwaZulu Natal South Africa and a fellow of the International Cultural Diplomacy. With a strong background and Expertise in digital technology, Dr. Fatai-Abatan brings a wealth of knowledge and experience to the classroom. His research interests include political economy, electoral tecnology and development studies. Dr Fatai-Abatan has published numerous papers in reputable journals and has collaborated with scholars outside Nigeria on ground breaking research. He has won several awards of distinction and appreciation from students, reputable organisation, institutions and humanitarian agencies for his sterling contribution to research, sustainable development and humanity. As the Dean of Students, Dr. Fatai-Abatan goal is committed to fostering a supportive learning environment and inspiring students to achieve their full potential for career development and successful life.',
+      image: '/images/Abiodun Fatai-Abatan.jpg',
       social: { linkedin: '#', twitter: '#' },
     },
     {
