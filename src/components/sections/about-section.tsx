@@ -96,7 +96,7 @@ export function AboutSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right content - Image placeholder */}
+          {/* Right content - Image */}
           <motion.div
             className="max-w-lg flex-1"
             initial={{ opacity: 0, x: 50 }}
@@ -104,24 +104,8 @@ export function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="flex aspect-[4/3] items-center justify-center rounded-3xl border border-white/20 bg-white/10 shadow-xl backdrop-blur-sm">
-              <div className="rounded-xl bg-white/20 p-8 shadow-inner backdrop-blur-sm">
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" className="text-white/70">
-                  <path
-                    d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
-                  <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" strokeWidth="2" />
-                  <path
-                    d="M21 15L16 10L5 21"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+            <div className="aspect-[4/3] overflow-hidden rounded-3xl border border-white/20 bg-white/10 shadow-xl backdrop-blur-sm">
+              <img src={about.image} alt="About LASU TECH X 4.0" className="h-full w-full object-cover" />
             </div>
           </motion.div>
         </div>

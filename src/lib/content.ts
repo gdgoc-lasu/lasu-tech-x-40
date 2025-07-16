@@ -53,7 +53,7 @@ export const siteContent = {
       { number: '20+', label: 'Speakers', description: 'Industry experts and thought leaders' },
       { number: '10', label: 'Workshops', description: 'Hands-on learning sessions' },
     ],
-    image: '/images/Hero_Bg.jpg',
+    image: '/images/AboutImg.jpg',
   },
 
   // Speakers section
