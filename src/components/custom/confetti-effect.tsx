@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react'
 import Confetti from 'react-confetti'
 
 export function ConfettiEffect() {
-  const [showConfetti, setShowConfetti] = useState(false)
+  const [isActive, setIsActive] = useState(false)
   const [windowDimensions, setWindowDimensions] = useState({
-    width: 0,
-    height: 0,
+    width: typeof window !== 'undefined' ? window.innerWidth : 1200,
+    height: typeof window !== 'undefined' ? window.innerHeight : 800,
   })
 
   useEffect(() => {
@@ -22,30 +22,27 @@ export function ConfettiEffect() {
     updateDimensions()
     window.addEventListener('resize', updateDimensions)
 
-    // Trigger confetti on page load
-    setShowConfetti(true)
-
-    // Stop confetti after 10 seconds
-    const timer = setTimeout(() => {
-      setShowConfetti(false)
-    }, 10000)
+    // Trigger confetti on page load with a small delay
+    const startTimer = setTimeout(() => {
+      setIsActive(true)
+    }, 500)
 
     return () => {
       window.removeEventListener('resize', updateDimensions)
-      clearTimeout(timer)
+      clearTimeout(startTimer)
     }
   }, [])
 
-  if (!showConfetti) return null
+  if (!isActive) return null
 
   return (
-    <div className="pointer-events-none fixed inset-0">
+    <div className="pointer-events-none fixed inset-0 z-[9999]">
       <Confetti
         width={windowDimensions.width}
         height={windowDimensions.height}
-        numberOfPieces={400}
+        numberOfPieces={300}
         recycle={false}
-        gravity={0.2}
+        gravity={0.15}
         colors={[
           '#30A832', // Brand green
           '#228B22', // Forest green
@@ -55,17 +52,24 @@ export function ConfettiEffect() {
           '#ADFF2F', // Green yellow
           '#7CFC00', // Lawn green
           '#9ACD32', // Yellow green
+          '#FFD700', // Gold
+          '#FFA500', // Orange
         ]}
-        wind={0.05}
-        friction={0.98}
-        run={showConfetti}
-        initialVelocityX={4}
-        initialVelocityY={8}
+        wind={0.03}
+        friction={0.99}
+        run={isActive}
+        initialVelocityX={3}
+        initialVelocityY={-12}
         confettiSource={{
           x: 0,
           y: 0,
           w: windowDimensions.width,
-          h: 10,
+          h: 0,
+        }}
+        tweenDuration={8000}
+        onConfettiComplete={() => {
+          // This will be called when all confetti has naturally fallen off screen
+          setIsActive(false)
         }}
       />
     </div>

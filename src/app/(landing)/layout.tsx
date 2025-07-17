@@ -7,10 +7,12 @@ import { siteContent } from '@/lib/content'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'motion/react'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function LandingLayout({ children }: { children: React.ReactNode }) {
   const { footer } = siteContent
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   // Navigation items from design
   const navItems = [
@@ -30,8 +32,8 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
     <div className="min-h-screen bg-[#E0F0DF]">
       <StructuredData />
 
-      {/* Confetti Effect - Full screen */}
-      <ConfettiEffect />
+      {/* Confetti Effect - Only on home page */}
+      {pathname === '/' && <ConfettiEffect />}
 
       <motion.header
         className="relative top-0 right-0 left-0 z-10"

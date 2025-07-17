@@ -261,12 +261,9 @@ export function AgendaSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="mb-4 text-4xl font-bold text-gray-800 md:text-5xl lg:text-6xl">Event Agenda</h2>
-          <p className="mx-auto max-w-3xl text-xl text-gray-600">
+          <p className="mx-auto max-w-3xl text-xl font-bold text-gray-600">
             Join us for a full day of inspiring talks, networking, and hands-on sessions
           </p>
-          <div className="mt-6 text-lg text-gray-700">
-            <p className="font-semibold">Moderator: Mordiyyah T. Abdul Quadri</p>
-          </div>
         </motion.div>
 
         {/* Two cards per row with clear spacing */}
@@ -277,7 +274,7 @@ export function AgendaSection() {
               className="rounded-lg p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl"
               style={{
                 backgroundColor: getCardColor(index),
-                border: `3px solid ${getCardColor(index)}`,
+                border: `3px solid black`,
                 borderRadius: '12px',
               }}
               initial={{ opacity: 0, y: 30 }}
@@ -287,7 +284,7 @@ export function AgendaSection() {
             >
               {/* Topic at the top */}
               <div className="mb-4">
-                <h3 className="mb-2 text-xl font-normal text-gray-900">{item.event}</h3>
+                <h3 className="mb-2 text-xl font-bold text-gray-900">{item.event}</h3>
                 <div className="flex items-center space-x-4 text-sm text-gray-600">
                   <span className="font-medium">{item.time}</span>
                   <span>•</span>
@@ -296,7 +293,7 @@ export function AgendaSection() {
               </div>
 
               {/* Details */}
-              {item.details && <p className="mb-4 text-sm leading-relaxed text-gray-700">{item.details}</p>}
+              {item.details && <p className="mb-4 text-sm leading-relaxed font-bold text-gray-700">{item.details}</p>}
 
               {/* Speaker/Coordinator info at bottom */}
               <div className="flex items-center justify-between">
@@ -316,7 +313,7 @@ export function AgendaSection() {
                       </div>
                       <div>
                         <p className="text-sm font-semibold text-gray-900">{item.moderator || item.coordinator}</p>
-                        <p className="text-xs text-gray-600">Moderator</p>
+                        <p className="text-xs font-bold text-gray-600">Moderator</p>
                       </div>
                     </div>
 
@@ -337,7 +334,9 @@ export function AgendaSection() {
                           ))}
                         </div>
                         <div className="ml-2">
-                          <p className="text-xs text-gray-600">Panelists</p>
+                          <div>
+                            <p className="text-xs font-bold text-gray-600">Panelists</p>
+                          </div>
                         </div>
                       </div>
                     )}
@@ -358,13 +357,15 @@ export function AgendaSection() {
                         </div>
                         <div>
                           <p className="text-sm font-semibold text-gray-900">{item.coordinator}</p>
-                          <p className="text-xs text-gray-600">{item.type === 'speaker' ? 'Speaker' : 'Coordinator'}</p>
+                          <p className="text-xs font-bold text-gray-600">
+                            {item.type === 'speaker' ? 'Speaker' : 'Coordinator'}
+                          </p>
                         </div>
                       </div>
                     ) : (
                       <div>
                         <p className="text-sm font-semibold text-gray-900">{item.coordinator}</p>
-                        <p className="text-xs text-gray-600 capitalize">
+                        <p className="text-xs font-bold text-gray-600 capitalize">
                           {item.type === 'speaker' ? 'Speaker' : 'Coordinator'}
                         </p>
                       </div>
