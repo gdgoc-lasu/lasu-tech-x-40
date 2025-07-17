@@ -1,23 +1,21 @@
 'use client'
 
 import { Logo } from '@/components/custom/logo'
-import { Button } from '@/components/ui/button'
 import { StructuredData } from '@/components/seo/structured-data'
+import { ConfettiEffect } from '@/components/custom/confetti-effect'
 import { siteContent } from '@/lib/content'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'motion/react'
 import { useState } from 'react'
 
 export default function LandingLayout({ children }: { children: React.ReactNode }) {
-  const { navigation, footer } = siteContent
+  const { footer } = siteContent
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   // Navigation items from design
   const navItems = [
-    { title: 'Home', href: '#home' },
-    { title: 'About Us', href: '#about' },
-    { title: 'Event Highlights', href: '#event-highlights' },
-    { title: 'Speakers', href: '#speakers' },
+    { title: 'Speakers', href: '/speakers' },
+    { title: 'Core Team', href: '/core-team' },
   ]
 
   const toggleMobileMenu = () => {
@@ -31,8 +29,12 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
   return (
     <div className="min-h-screen bg-[#E0F0DF]">
       <StructuredData />
+
+      {/* Confetti Effect - Full screen */}
+      <ConfettiEffect />
+
       <motion.header
-        className="fixed top-0 right-0 left-0 z-50 border-b border-gray-100/50 bg-white/95 backdrop-blur-md"
+        className="relative top-0 right-0 left-0 z-10"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
@@ -41,7 +43,7 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
         }}
       >
         <div className="container mx-auto">
-          <div className="flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between px-4 py-3 sm:px-6 lg:px-6">
             {/* Logo */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -50,18 +52,18 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
               className="flex-shrink-0"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.2 }}>
-                <Logo variant="dark" className="h-8 w-auto sm:h-10" />
+                <Logo variant="dark" className="h-8 w-auto sm:h-10 lg:h-12" />
               </motion.div>
             </motion.div>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation - moved to the right */}
             <motion.nav
-              className="hidden lg:block"
+              className="ml-auto hidden lg:block"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <ul className="flex items-center space-x-8 xl:space-x-12">
+              <ul className="flex items-center space-x-4 xl:space-x-6">
                 {navItems.map((item, index) => (
                   <motion.li
                     key={item.title}
@@ -76,7 +78,7 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
                     <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2, ease: 'easeOut' }}>
                       <Link
                         href={item.href}
-                        className="group relative text-base font-medium text-gray-700 transition-colors duration-300 hover:text-[#30A832]"
+                        className="group relative text-sm font-medium text-gray-700 transition-colors duration-300 hover:text-[#30A832]"
                       >
                         {item.title}
                         <motion.div
@@ -91,38 +93,6 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
                 ))}
               </ul>
             </motion.nav>
-
-            {/* Desktop Register Button */}
-            <motion.div
-              className="hidden sm:block"
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <motion.div
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: '0 8px 25px rgba(48, 168, 50, 0.25)',
-                }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Button
-                  asChild
-                  className="relative overflow-hidden rounded-full border-0 bg-[#30A832] px-6 py-2.5 font-semibold text-white shadow-lg transition-all duration-300 hover:bg-[#278A29] hover:shadow-xl"
-                >
-                  <Link href={navigation.cta.href}>
-                    <span className="relative z-10">{navigation.cta.text}</span>
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                      initial={{ x: '-100%' }}
-                      whileHover={{ x: '100%' }}
-                      transition={{ duration: 0.6, ease: 'easeInOut' }}
-                    />
-                  </Link>
-                </Button>
-              </motion.div>
-            </motion.div>
 
             {/* Mobile Menu Button */}
             <motion.button
@@ -150,16 +120,9 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
               </motion.div>
             </motion.button>
           </div>
-
-          {/* Bottom border animation */}
-          <motion.div
-            className="h-0.5 bg-gradient-to-r from-[#30A832] via-[#29C415] to-[#30A832]"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.6, ease: 'easeInOut' }}
-            style={{ transformOrigin: 'left' }}
-          />
         </div>
+        {/* Green underline that sits on top of cover */}
+        <div className="absolute right-0 bottom-0 left-0 z-20 h-1 bg-[#30A832] shadow-lg"></div>
 
         {/* Mobile Menu Overlay */}
         <AnimatePresence>
@@ -177,7 +140,7 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
 
               {/* Mobile Menu */}
               <motion.div
-                className="absolute top-full right-0 left-0 border-b border-gray-100 bg-white/95 shadow-xl backdrop-blur-md lg:hidden"
+                className="absolute top-full right-0 left-0 z-30 border-b border-gray-100 bg-white/95 shadow-xl backdrop-blur-md lg:hidden"
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}
@@ -209,25 +172,6 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
                       </motion.div>
                     ))}
                   </motion.nav>
-
-                  {/* Mobile Register Button */}
-                  <motion.div
-                    className="mt-6 border-t border-gray-100 pt-6"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.3, delay: 0.4 }}
-                  >
-                    <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.2 }}>
-                      <Button
-                        asChild
-                        className="w-full rounded-full border-0 bg-[#30A832] py-3 font-semibold text-white shadow-lg hover:bg-[#278A29]"
-                      >
-                        <Link href={navigation.cta.href} onClick={closeMobileMenu}>
-                          {navigation.cta.text}
-                        </Link>
-                      </Button>
-                    </motion.div>
-                  </motion.div>
                 </div>
               </motion.div>
             </>
@@ -235,7 +179,7 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
         </AnimatePresence>
       </motion.header>
 
-      <main className="pt-20">{children}</main>
+      <main className="pt-0">{children}</main>
 
       <motion.footer
         className="bg-gray-900 px-4 py-16 text-white sm:px-6 lg:px-8"

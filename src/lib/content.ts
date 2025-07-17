@@ -49,8 +49,8 @@ export const siteContent = {
     description:
       'Join us for a day filled with cutting-edge technology discussions, networking opportunities, and hands-on workshops that will shape the next generation of tech innovators.',
     stats: [
-      { number: '200+', label: 'Participants', description: 'Tech enthusiasts and professionals' },
-      { number: '20+', label: 'Speakers', description: 'Industry experts and thought leaders' },
+      { number: '400+', label: 'Participants', description: 'Tech enthusiasts and professionals' },
+      { number: '12+', label: 'Speakers', description: 'Industry experts and thought leaders' },
       { number: '10', label: 'Workshops', description: 'Hands-on learning sessions' },
     ],
     image: '/images/AboutImg.jpg',
