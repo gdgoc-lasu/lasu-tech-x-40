@@ -1,15 +1,22 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+const googleSansDisplay = localFont({
+  src: [
+    {
+      path: '../../public/fonts/GoogleSansDisplay-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/GoogleSansDisplay-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-google-sans-display',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -105,7 +112,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#30A832" />
         <meta name="msapplication-TileColor" content="#30A832" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${googleSansDisplay.variable} antialiased`}>{children}</body>
     </html>
   )
 }
