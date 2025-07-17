@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const googleSansDisplay = localFont({
   src: [
@@ -112,7 +114,11 @@ export default function RootLayout({
         <meta name="theme-color" content="#30A832" />
         <meta name="msapplication-TileColor" content="#30A832" />
       </head>
-      <body className={`${googleSansDisplay.variable} antialiased`}>{children}</body>
+      <body className={`${googleSansDisplay.variable} antialiased`}>
+        {children}
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   )
 }
