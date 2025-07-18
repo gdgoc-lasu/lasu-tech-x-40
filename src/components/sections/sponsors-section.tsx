@@ -89,30 +89,6 @@ export function SponsorsSection() {
             <SponsorCard key={index} sponsor={sponsor} />
           ))}
         </div>
-
-        {/* Call to Action */}
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="rounded-2xl bg-gradient-to-r from-[#30A832] to-[#228B22] p-8 text-white">
-            <h3 className="mb-4 text-2xl font-bold">Interested in Sponsoring?</h3>
-            <p className="mb-6 text-lg opacity-90">
-              Join our amazing sponsors and help us create an unforgettable tech experience
-            </p>
-            <motion.a
-              href="mailto:sponsors@lasutechx.com"
-              className="inline-block rounded-full bg-white px-8 py-3 font-semibold text-[#30A832] transition-colors duration-300 hover:bg-gray-100"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Become a Sponsor
-            </motion.a>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

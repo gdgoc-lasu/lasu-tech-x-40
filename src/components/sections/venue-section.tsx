@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react'
 import Image from 'next/image'
+const lasutechx_ticket = '/images/lasutechx_ticket.svg'
 
 export function VenueSection() {
   return (
@@ -20,7 +21,9 @@ export function VenueSection() {
             Join us at our state-of-the-art venue for an unforgettable tech experience
           </p>
         </motion.div>
-
+        <div className="mb-8 flex justify-center">
+          <Image src={lasutechx_ticket} alt="LASU TechX Ticket" width={600} height={400} className="h-auto w-1/2" />
+        </div>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           {/* Venue Image */}
           <motion.div
@@ -43,25 +46,6 @@ export function VenueSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {/* Registration Check */}
-            <div className="rounded-xl bg-gradient-to-r from-[#30A832] to-[#228B22] p-6 text-white">
-              <h3 className="mb-4 text-xl font-bold">Registration Status</h3>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span>Total Capacity:</span>
-                  <span className="font-semibold">500 attendees</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>Registered:</span>
-                  <span className="font-semibold">350+ attendees</span>
-                </div>
-                <div className="h-2 w-full rounded-full bg-white/20">
-                  <div className="h-2 rounded-full bg-white" style={{ width: '70%' }}></div>
-                </div>
-                <p className="mt-2 text-center text-sm">Limited spots available - Register now!</p>
-              </div>
-            </div>
-
             {/* Venue Details */}
             <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-lg">
               <h3 className="mb-6 text-2xl font-bold text-gray-800">Venue Details</h3>
@@ -130,18 +114,68 @@ export function VenueSection() {
                 </div>
               </div>
             </div>
-
-            {/* Transportation Info */}
-            <div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
-              <h3 className="mb-4 text-lg font-bold text-gray-800">Getting There</h3>
-              <div className="space-y-2 text-gray-600">
-                <p>• Bus: Take BRT to Ojo and connect to LASU shuttle</p>
-                <p>• Car: Free parking available on campus</p>
-                <p>• Ride-share: Available to campus gates</p>
-              </div>
-            </div>
           </motion.div>
         </div>
+
+        {/* Getting There section moved below the grid */}
+        <motion.div
+          className="mx-auto mt-12 max-w-3xl"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
+            <h3 className="mb-6 text-lg font-bold text-gray-800">Getting There</h3>
+            <div className="space-y-4">
+              {/* Bus Route */}
+              <div className="flex items-start space-x-4">
+                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#30A832] text-sm font-bold text-white">
+                  1
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800">Take BRT to Ojo</h4>
+                  <p className="text-gray-600">Board any BRT bus heading to Ojo terminal</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#30A832] text-sm font-bold text-white">
+                  2
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800">Connect to LASU Shuttle</h4>
+                  <p className="text-gray-600">From Ojo terminal, take LASU shuttle to campus</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#30A832] text-sm font-bold text-white">
+                  3
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800">Arrive at LASU CBT Center</h4>
+                  <p className="text-gray-600">Follow signs to the CBT Center building</p>
+                </div>
+              </div>
+
+              {/* Alternative Options */}
+              <div className="mt-6 border-t border-gray-300 pt-4">
+                <p className="mb-3 text-sm font-semibold text-gray-700">Alternative Options:</p>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex items-center space-x-2">
+                    <div className="h-2 w-2 rounded-full bg-[#30A832]"></div>
+                    <span>Car: Free parking available on campus</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="h-2 w-2 rounded-full bg-[#30A832]"></div>
+                    <span>Ride-share: Available to campus main gate</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )
